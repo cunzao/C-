@@ -57,7 +57,7 @@ pour_water::pour_water(vector<cup> new_list) {
 
 pour_water::pour_water() {
 	while (!Cin_Cup_List()) {
-		cout << "输入数据错误！请重新输入！！！" << endl << endl;
+		cout << "\u8f93\u5165\u6570\u636e\u9519\u8bef\uff01\u8bf7\u91cd\u65b0\u8f93\u5165\uff01\uff01\uff01" << endl << endl;
 	}
 	vector<int> situate;
 	for (unsigned int i = 0; i < Cup_List.size(); i++) {//把所有杯子的现有水量填入situate这个临时变量中
@@ -205,13 +205,13 @@ void pour_water::Cout_Situation_Stack() {//输出步骤
 			s.insert(s.begin() + 1, Situation_Stack.at(temp_index));
 			temp_index = Situation_Stack.at(temp_index).father;
 		}
-		cout << endl << "共" << s.size() - 1 << "个步骤" << endl;
+		cout << endl << "\u5171" << s.size() - 1 << "\u4e2a\u6b65\u9aa4" << endl;
 		for (unsigned int i = 0; i < s.size(); i++) {
 			cout << s.at(i) << endl;
 		}
 	}
 	else {
-		cout << "无解!" << endl;
+		cout << "\u65e0\u89e3\u0021" << endl;
 	}
 }
 
@@ -230,9 +230,9 @@ istream& operator>>(istream & in, cup & cup) {
 }
 
 ostream & operator<<(ostream & out, situation & s) {
-	out << "从第" << s.Poured_Cup_One << "个杯子倒入" << s.Poured_Cup_Two << "个杯子" << endl;
+	out << "\u4ece\u7b2c" << s.Poured_Cup_One << "\u4e2a\u676f\u5b50\u5012\u5165" << s.Poured_Cup_Two << "\u4e2a\u676f\u5b50" << endl;
 	for (unsigned int i = 0; i < s.Contain_Situation.size(); i++) {
-		out << "第 " << i << " 个杯子的水量是: " << s.Contain_Situation.at(i) << "\t" << endl;
+		out << "\u7b2c " << i << " \u4e2a\u676f\u5b50\u7684\u6c34\u91cf\u662f: " << s.Contain_Situation.at(i) << "\t" << endl;
 	}
 	return out;
 }
